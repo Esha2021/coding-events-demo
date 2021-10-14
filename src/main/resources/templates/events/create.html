@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body>
+<body class="container">
 
 <header th:replace="fragments :: header"></header>
+<p th:text="${errorMsg}" style="color:red;"></p>
 
 <form method="post">
-    <input type="text" name="eventName">
-    <input type="submit" value="Create">
+    <div class="form_group">
+        <label>Name
+            <input th:field="${event.name}" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.name}"></p>
+    </div>
+    <div class="form_group">
+        <label>Description
+            <input  th:field="${event.description}" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.description}"></p>
+    </div>
+    <div class="form_group">
+        <label>Email
+            <input t th:field="${event.contactEmail}" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.contactEmail}"></p>
+    </div>
+    <div class="form_group">
+    <input type="submit" value="Create" class="btn btn-success">
+    </div>
 </form>
 
 </body>

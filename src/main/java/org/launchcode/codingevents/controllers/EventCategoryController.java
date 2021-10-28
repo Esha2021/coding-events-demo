@@ -19,7 +19,7 @@ import javax.validation.Valid;
 @RequestMapping("eventCategories")
 public class EventCategoryController {
     @Autowired
-    private EventCategoryRepository eventCategoryRepository;
+    private EventCategoryRepository   eventCategoryRepository;
 
     @GetMapping
     public String displayAllEvents(Model model) {

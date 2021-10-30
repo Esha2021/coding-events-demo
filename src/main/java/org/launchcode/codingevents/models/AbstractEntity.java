@@ -10,7 +10,7 @@ public  abstract class AbstractEntity {
 
     @Id
     @GeneratedValue
-    public int id;
+    private int id;
 
     public AbstractEntity() {
     }
@@ -23,8 +23,8 @@ public  abstract class AbstractEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AbstractEntity that = (AbstractEntity) o;
-        return id == that.id;
+        AbstractEntity entity = (AbstractEntity) o;
+        return id == entity.id;
     }
 
     @Override
